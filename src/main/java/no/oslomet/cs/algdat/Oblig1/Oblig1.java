@@ -29,8 +29,32 @@ public class Oblig1 {
         return maks;
     };
 
+    /* * Når blir det flest ombyttinger?
+    * Hvis tallene er sortert omvendt med descending order, og starter fra 9 og slutter med 1, i en array fra 1-9
+    * Når blir det færrest?
+      * Hvis tallene er sortert "riktig" og starter fra 1 og slutter med 9, i en array fra 1-9
+    * Hvor mange blir det i gjennomsnitt?
+      * Det blir i gjennomsnitt log(n) – 0,423 ombyttinger, hvis n var antall tall i arrayet.
+        * Naturlige logaritmen
+      * For et random array med 10 tall, blir det log(10) - 0,423 = 2.3 - 0,423 = 1.9 ombyttinger. */
     public static int ombyttinger(int[] a) {
+        if (a.length == 0) { //hvis tabell er tomt, error
+            throw new NoSuchElementException();
+        }
 
+        int antallombyttinger = 0;
+        for (int i = 0; i < a.length; i++) {
+            if (i == a.length - 1) {
+                return antallombyttinger;
+            }
+            if (a[i] > a[i+1]) { // Sjekker hvis venstre er større enn høyre i verdi
+                int temp = a[i+1]; //lagrer høyre
+                a[i+1] = a[i]; // gjør om høyre til venstre
+                a[i] = temp; // gjør om venstre til den gamle høyre verdien.
+                antallombyttinger++; // Legger til i antall ombyttinger
+            }
+        }
+        return antallombyttinger;
     }
 
     ///// Oppgave 2 //////////////////////////////////////
