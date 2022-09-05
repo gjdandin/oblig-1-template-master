@@ -1,0 +1,32 @@
+)java.lang.UnsupportedOperationException
+:Oppgave 10: a) Skal ikke kaste unntak for to tomme ord!!
+.Oppgave 10: b) Svaret skal bli lik true her!
+)java.lang.UnsupportedOperationException
+9Oppgave 10: c) Skal ikke kaste unntak for et tomt ord!!
+.Oppgave 10: d) Svaret skal bli lik true her!
+)java.lang.UnsupportedOperationException
+9Oppgave 10: e) Skal ikke kaste unntak for et tomt ord!!
+;Oppgave 2: a) Ikke unntak for tabell med 0 eller 1 verdi!
+3Oppgave 2: b) Feil unntak for en usortert tabell!
+;Oppgave 3: a) Ikke unntak for tabell med 0 eller 1 verdi!
+.Oppgave 4: a) Ikke unntak for en tom tabell!
+,Oppgave 4: b) Skal ikke kastes unntak her!
+,Oppgave 4: d) Skal ikke kastes unntak her!
+6Oppgave 4: f) Det går galt hvis det kun er partall!
+6Oppgave 4: g) Det blir feil hvis det kun er partall!
+7Oppgave 4: h) Det går galt hvis det kun er oddetall!
+7Oppgave 4: i) Det blir feil hvis det kun er oddetall!
+:Oppgave 5: a) Skal ikke kaste unntak for en tom tabell!!
+)java.lang.UnsupportedOperationException
+:Oppgave 6: a) Skal ikke kaste unntak for en tom tabell!!
+	)java.lang.UnsupportedOperationException
+	COppgave 7a: a) Skal ikke kaste unntak for to tomme tegnstrenger!!
+
+9Opgave 8: a) Skal ikke kastes unntak for en tom tabell!
+
+/Opgave 8: b) Indekstabellen skal ha lengde 0!
+
++Opgave 8: c) Skal ikke kastes unntak her!
+
+/Opgave 8: d) Indekstabellen skal ha lengde 1!
+Opgave 9: a) Feil unntak!
