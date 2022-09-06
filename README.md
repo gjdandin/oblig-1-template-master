@@ -33,4 +33,6 @@ enn de maks-metodene vi har sett på tidligere?
 * Denne maks metoden er dårligere pga. ekstra operasjoner som å bytte posisjoner mens O(n) fortsatt gjelder.
 
 
-I oppgave 2 så brukte vi en ... til å ...
+2. I oppgave 2 så brukte jeg en hjelpe-arraylist og arraylist metoden contain for å sjekke om et tall
+hadde et duplikat i arrayet. Resten er gjort med if-statements for å sjekke om arrayet er sortert riktig, og en while
+loop for å loope gjennom arrayet og telle unike integers (lineær-notasjon). 
