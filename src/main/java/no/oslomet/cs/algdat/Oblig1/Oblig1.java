@@ -68,6 +68,15 @@ public class Oblig1 {
             return 0;
         }
         while (i < a.length) {
+            if (i == a.length - 1) { //Hvis i er lik a sitt siste indeks,
+                if (!b.contains(a[i])) { //Sjekk hvis den er der allerede, hvis ikke så legg til lista.
+                    b.add(a[i]);
+                    return b.size();
+                }
+                else {
+                    return b.size(); //Ellers returnerer man antall ulike tall.
+                }
+            }
 
             if (a[i] > a[i+1]) { //Hvis venstre er større enn høyre, er den ikke sortert.
                 throw new IllegalStateException("Tallene i arrayet er ikke sortert!");
