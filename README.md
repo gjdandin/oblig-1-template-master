@@ -3,7 +3,7 @@
 Denne oppgaven er en innlevering i Algoritmer og Datastrukturer. 
 Oppgaven er levert av følgende studenter:
 * Gilhan Dandin, S360903, s360903@oslomet.no
-* ...
+
 
 # Arbeidsfordeling
 

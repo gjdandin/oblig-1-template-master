@@ -3,6 +3,8 @@ package no.oslomet.cs.algdat.Oblig1;
 ////// Løsningsforslag Oblig 1 ////////////////////////
 
 import java.lang.UnsupportedOperationException;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.NoSuchElementException;
 
 public class Oblig1 {
@@ -59,7 +61,25 @@ public class Oblig1 {
 
     ///// Oppgave 2 //////////////////////////////////////
     public static int antallUlikeSortert(int[] a) {
-        throw new UnsupportedOperationException();
+        int i = 0;
+        List<Integer> b = new ArrayList<Integer>(); //Lista der vi legger unike verdier.
+
+        if (a.length == 0) { // Sjekker hvis arrayet er tomt
+            return 0;
+        }
+        while (i < a.length) {
+
+            if (a[i] > a[i+1]) { //Hvis venstre er større enn høyre, er den ikke sortert.
+                throw new IllegalStateException("Tallene i arrayet er ikke sortert!");
+            }
+
+            if (!b.contains(a[i]) ) { // Hvis b-lista som inneholder unike verdier ikke har a[i], legg til.
+                b.add(a[i]);
+            }
+
+            i++;
+        }
+        return b.size();
     }
 
     ///// Oppgave 3 //////////////////////////////////////

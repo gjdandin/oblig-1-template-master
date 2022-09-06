@@ -76,7 +76,6 @@ public class Oblig1Test {
         }
 
         int[] random = {6, 10, 5, 1, 2, 9, 3, 8, 7, 4};
-        System.out.println(Oblig1.ombyttinger(random));
         assertEquals(0, antallFeil, "Du har for mange feil i oppgave 1");
     }
 
