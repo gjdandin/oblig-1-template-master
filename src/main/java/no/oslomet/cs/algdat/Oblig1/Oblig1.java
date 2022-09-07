@@ -117,7 +117,49 @@ public class Oblig1 {
 
     ///// Oppgave 4 //////////////////////////////////////
     public static void delsortering(int[] a) {
-        throw new UnsupportedOperationException();
+        if (a.length > 1) {
+            boolean midtenpar = false;
+            if (a[a.length/2] % 2 == 0) { //hvis midten er partall
+                midtenpar = true;
+            }
+
+            for (int i = 0; i < a.length; i++) {
+                // partisjonering hvis partall
+                if (a[i] % 2 == 0) { //Sjekk hvis partall
+                    int j = 0;
+                    if (midtenpar) {
+                        j = a.length/2;
+                    }
+                    else {
+                        j = a.length/2 + 1;
+                    }
+                    for (;j < a.length; j++) { //starter fra midten til høyre
+                        if (a[j] % 2 != 0) { //sjekk hvis oddetall
+                            int temp = a[j]; //lagre oddetallet
+                            a[j] = a[i]; //gjør oddetallet til partallet
+                            a[i] = temp; //gjør original posisjon til partallet til oddetall (venstre)
+                        }
+                    }
+                }
+                //partisjonering hvis oddetall
+                if (a[i] % 2 != 0) { //Sjekk hvis partall
+                    int j = 0;
+                    if (midtenpar) {
+                        j = a.length/2;
+                    }
+                    else {
+                        j = a.length/2 - 1;
+                    }
+                    for (; j > 0; j--) { //starter fra midten til venstre
+                        if (a[j] % 2 == 0) { //sjekk hvis partall
+                            int temp = a[j]; //lagre partallet
+                            a[j] = a[i]; //gjør partallet til oddetallet
+                            a[i] = temp; //gjør original posisjon til oddetallet til partallet (høyre)
+                        }
+                    }
+                }
+            }
+        }
     }
 
     ///// Oppgave 5 //////////////////////////////////////

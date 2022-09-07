@@ -6,13 +6,12 @@
 .Oppgave 10: d) Svaret skal bli lik true her!
 )java.lang.UnsupportedOperationException
 9Oppgave 10: e) Skal ikke kaste unntak for et tomt ord!!
-.Oppgave 4: a) Ikke unntak for en tom tabell!
-,Oppgave 4: b) Skal ikke kastes unntak her!
-,Oppgave 4: d) Skal ikke kastes unntak her!
-6Oppgave 4: f) Det går galt hvis det kun er partall!
 6Oppgave 4: g) Det blir feil hvis det kun er partall!
-7Oppgave 4: h) Det går galt hvis det kun er oddetall!
 7Oppgave 4: i) Det blir feil hvis det kun er oddetall!
+3Oppgave 4: j) Gitt tabell:     [1, 2, 3, 4, 5, 6]
+3              Metoden skal gi: [1, 3, 5, 2, 4, 6]
+3              Du fikk:         [2, 3, 5, 1, 4, 6]
+8Oppgave 4: l) Metoden gjør feil for negative verdier!
 :Oppgave 5: a) Skal ikke kaste unntak for en tom tabell!!
 )java.lang.UnsupportedOperationException
 :Oppgave 6: a) Skal ikke kaste unntak for en tom tabell!!
