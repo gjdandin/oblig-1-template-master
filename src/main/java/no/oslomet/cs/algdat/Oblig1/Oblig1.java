@@ -150,7 +150,7 @@ public class Oblig1 {
                     else {
                         j = a.length/2 - 1;
                     }
-                    for (; j > 0; j--) { //starter fra midten til venstre
+                    for (; j > -1; j--) { //starter fra midten til venstre
                         if (a[j] % 2 == 0) { //sjekk hvis partall
                             int temp = a[j]; //lagre partallet
                             a[j] = a[i]; //gjør partallet til oddetallet
@@ -158,6 +158,34 @@ public class Oblig1 {
                         }
                     }
                 }
+
+                if (a[0] % 2 == 0) { //sjekk hvis første er et partall, isåfall bytt med len/2
+                    int temp = 0;
+                    temp = a[0];
+                    a[0] = a[a.length/2];
+                    a[a.length/2] = temp;
+                }
+
+                /* for (i = a.length/2; i < a.length; i++) { //sorter partall til høyre
+                    if (i == a.length - 1) {
+                        break;
+                    }
+                    if (a[i] > a[i + 1]) { // Sjekker hvis venstre er større enn høyre i verdi
+                        int temp = a[i + 1]; //lagrer høyre
+                        a[i + 1] = a[i]; // gjør om høyre til venstre
+                        a[i] = temp; // gjør om venstre til den gamle høyre verdien.
+                    }
+                }
+
+                for (i = a.length/2; i > 0; i--) { //sorter oddetall til venstre
+                    if (a[i - 1] > a[i]) { // Sjekker hvis venstre er større enn høyre i verdi
+                        int temp = a[i - 1]; //lagrer høyre
+                        a[i - 1] = a[i]; // gjør om høyre til venstre
+                        a[i] = temp; // gjør om venstre til den gamle høyre verdien.
+                    }
+                }
+
+                 */
             }
         }
     }
