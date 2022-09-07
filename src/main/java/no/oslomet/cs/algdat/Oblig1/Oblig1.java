@@ -93,7 +93,21 @@ public class Oblig1 {
 
     ///// Oppgave 3 //////////////////////////////////////
     public static int antallUlikeUsortert(int[] a) {
-        throw new UnsupportedOperationException();
+        if (a.length == 0) { // Sjekker hvis arrayet er tomt
+            return 0;
+        }
+
+        int antallulike = a.length;
+
+        for (int i = 0; i < a.length; i++) {
+            for (int j = 0; j < a.length; j++) {
+                if (a[i] == a[j]) {
+                    antallulike--;
+                }
+            }
+        }
+
+        return antallulike;
     }
 
     ///// Oppgave 4 //////////////////////////////////////

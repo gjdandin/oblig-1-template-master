@@ -35,4 +35,6 @@ enn de maks-metodene vi har sett på tidligere?
 
 2. I oppgave 2 så brukte jeg en hjelpe-arraylist og arraylist metoden contain for å sjekke om et tall
 hadde et duplikat i arrayet. Resten er gjort med if-statements for å sjekke om arrayet er sortert riktig, og en while
-loop for å loope gjennom arrayet og telle unike integers (lineær-notasjon). 
+loop for å loope gjennom arrayet og telle unike integers (lineær-O notasjon). 
+
+3. 
