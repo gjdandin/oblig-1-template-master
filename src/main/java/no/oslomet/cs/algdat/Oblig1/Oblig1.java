@@ -96,18 +96,23 @@ public class Oblig1 {
         if (a.length == 0) { // Sjekker hvis arrayet er tomt
             return 0;
         }
+        else if (a.length == 1) { // Hvis arrayet er bare 1, da er det ingen duplikater.
+            return 1;
+        }
 
-        int antallulike = a.length;
+        int duplikater = 0;
 
-        for (int i = 0; i < a.length; i++) {
-            for (int j = 0; j < a.length; j++) {
+        for (int i = 0; i < a.length; i++) { //For loop for i går gjennom hele arrayet
+            for (int j = i+1; j < a.length; j++) {
+                // for loop j looper gjennom hele arrayet og sjekker om det finnes duplikat for a[i]
                 if (a[i] == a[j]) {
-                    antallulike--;
+                    duplikater++; // legg til antall duplikater
+                    break; //stopp å sjekk resten av arrayet, man teller ikke flere duplikater.
                 }
             }
         }
 
-        return antallulike;
+        return a.length - duplikater;
     }
 
     ///// Oppgave 4 //////////////////////////////////////

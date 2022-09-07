@@ -6,7 +6,6 @@
 .Oppgave 10: d) Svaret skal bli lik true her!
 )java.lang.UnsupportedOperationException
 9Oppgave 10: e) Skal ikke kaste unntak for et tomt ord!!
-;Oppgave 3: a) Ikke unntak for tabell med 0 eller 1 verdi!
 .Oppgave 4: a) Ikke unntak for en tom tabell!
 ,Oppgave 4: b) Skal ikke kastes unntak her!
 ,Oppgave 4: d) Skal ikke kastes unntak her!
