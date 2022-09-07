@@ -117,6 +117,17 @@ public class Oblig1 {
 
     ///// Oppgave 4 //////////////////////////////////////
     public static void delsortering(int[] a) {
+        /* Forslag til annen løsning
+        Sjekk om bare partall/oddetall
+        Start med len/2 som variable i.
+        bestem om oddetall eller partall
+        start med venstre og høyre verdi av midten og se om de er oddetall/partall.
+            Altså i = len/2, i[+1] er høyre, i[-1] er venstre. og sammenlign dem.
+            for each iteration and comparison, increase [i+j] j med 1.
+        continue until len start eller len slutt er oppnådd. Hvis det er midten så er de mest sannsynlig like lange.
+        Etter det sorter til venstre og høyre av len/2.
+         */
+
         if (a.length > 1) {
             boolean midtenpar = false;
             if (a[a.length/2] % 2 == 0) { //hvis midten er partall
@@ -139,6 +150,8 @@ public class Oblig1 {
                     break;
                 }
             }
+
+            if ()
 
             if (!bareoddetall && !bareoddetall) {
                 for (int i = 0; i < a.length; i++) {
