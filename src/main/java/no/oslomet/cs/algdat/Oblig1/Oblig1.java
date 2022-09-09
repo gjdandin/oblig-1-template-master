@@ -128,12 +128,7 @@ public class Oblig1 {
         Etter det sorter til venstre og høyre av len/2.
          */
 
-        if (a.length > 1) {
-            boolean midtenpar = false;
-            if (a[a.length/2] % 2 == 0) { //hvis midten er partall
-                midtenpar = true;
-            }
-
+        if (a.length > 1) { //lista må være lenger enn 1.
             boolean barepartall = true;
             boolean bareoddetall = true;
 
@@ -151,14 +146,28 @@ public class Oblig1 {
                 }
             }
 
-            if ()
+            if (barepartall || bareoddetall) { //Hvis bare partall eller oddetall, sorter på vanlig måte.
+                for (int i = 0; i < a.length; i++) { //venstre
+                    for (int j = i + 1; j < a.length; j++) { // høyre
+                        if (a[i] > a[j]) { // hvis venstre er større enn høyre - bytt.
+                            int temp = a[i];
+                            a[i] = a[j];
+                            a[j] = temp;
+                        }
+                    }
+                }
+            }
 
-            if (!bareoddetall && !bareoddetall) {
+            boolean midtenpartall = false;
+            if (a[a.length/2] % 2 == 0) { //hvis midten er partall
+                midtenpartall = true;
+            }
+            if (!bareoddetall && !barepartall) {
                 for (int i = 0; i < a.length; i++) {
                     // partisjonering hvis partall
                     if (a[i] % 2 == 0) { //Sjekk hvis partall
                         int j = 0;
-                        if (midtenpar) {
+                        if (midtenpartall) {
                             j = a.length / 2;
                         } else {
                             j = a.length / 2 + 1;
@@ -174,7 +183,7 @@ public class Oblig1 {
                     //partisjonering hvis oddetall
                     if (a[i] % 2 != 0) { //Sjekk hvis partall
                         int j = 0;
-                        if (midtenpar) {
+                        if (midtenpartall) {
                             j = a.length / 2;
                         } else {
                             j = a.length / 2 - 1;

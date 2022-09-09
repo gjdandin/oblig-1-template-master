@@ -8,14 +8,11 @@ Oppgaven er levert av følgende studenter:
 # Arbeidsfordeling
 
 I oppgaven har vi hatt følgende arbeidsfordeling:
-* Per har hatt hovedansvar for oppgave 1, 3, og 5. 
-* Else har hatt hovedansvar for oppgave 2, 4, og 6. 
-* Fatima har hatt hovedansvar for oppgave 7 og 8. 
-* Vi har i fellesskap løst oppgave 10. 
+* Gilhan har hovedansvar for oppgave 1, 2, 3, 4, 5, 7 - Alle oppgavene er gjort individuelt.
 
 # Oppgavebeskrivelse
 
-1. I oppgave 1 så gikk vi frem ved å bruke metodene maks og bytt som vi har lært
+1. I oppgave 1 så gikk jeg frem ved å bruke metodene maks og bytt som vi har lært
 på forelesningen i denne maks-metoden. Ombyttinger-metoden er samme prinsipp,
 bare med et return av et int antall istedet.
 
@@ -26,11 +23,13 @@ bare med et return av et int antall istedet.
 * Hvor mange blir det i gjennomsnitt?
   * Det blir i gjennomsnitt log(n) – 0,423 ombyttinger, hvis n var antall tall i arrayet.
     * Naturlige logaritmen
-  * For et random array med 10 tall, blir det log(10) - 0,423 = 2.3 - 0,423 = 1.9 ombyttinger.
+    * Referanse for denne formelen er fra kompendiet 1.1.6 og 1.1.9
+  * Eksempel: For et random array med 10 tall, blir det log(10) - 0,423 = 2.3 - 0,423 = 1.9 ombyttinger.
 
 Kan du på grunnlag av dette si om metoden maks er bedre (eller dårligere)
 enn de maks-metodene vi har sett på tidligere?
-* Denne maks metoden er dårligere pga. ekstra operasjoner som å bytte posisjoner mens O(n) fortsatt gjelder.
+* Denne maks metoden er dårligere pga. ekstra unødvendige operasjoner som å bytte posisjoner mens algoritmen
+  er fortsatt O(n).
 
 
 2. I oppgave 2 så brukte jeg en hjelpe-arraylist og arraylist metoden contain for å sjekke om et tall
