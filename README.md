@@ -43,6 +43,7 @@ loop for å loope gjennom arrayet og telle unike integers (lineær-O notasjon).
 
 4. I oppgave 4 så sleit jeg i starten med å partisjonere oddetall/partall på en effektiv måte. Ved bruk av to pointers og while-loop
 som skanner arrayet fra to motsatte retninger - start og slutt så halverer man skannetiden. 
-Pivot er beregnet gjennom å telle antall oddetall.
-Når partall/oddetall er delsortert, så brukte jeg kvikksorterings-metoden fra pensum til å sortere delarrayene. 
-Jeg prøvde først å sortere dem på min egen måte, men fant ut fort at det var for ineffektiv O(n*n). 
+Pivot er beregnet gjennom å telle antall oddetall og a[antalloddetall] signifiserer skillet mellom oddetall og partall.
+Når partall/oddetall er delsortert, så prøvde jeg først å sortere dem med min egen algoritme, men fant ut fort at det var for ineffektiv O(n*n).
+Eneste løsningen var så å bruke kvikksorterings-metoden fra pensum til å sortere delarrayene. 
+
