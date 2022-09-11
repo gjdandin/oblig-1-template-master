@@ -148,102 +148,74 @@ public class Oblig1 {
                 }
             }
 
-            //Sjekker hvis midten er partall
-            boolean midtenpartall = false;
-            if (a[a.length/2] % 2 == 0) { //hvis midten er partall
-                midtenpartall = true;
-            }
-
             if (!bareoddetall && !barepartall) {
+                int x = 0;
+                int n = a.length - 1;
+
+                int antallpartall = 0;
+                int antalloddetall = 0;
+
+                boolean funneteven = false;
+                boolean funnetodd = false;
+
                 for (int i = 0; i < a.length; i++) {
-                    // partisjonering hvis partall
-                    if (a[i] % 2 == 0) { //Sjekk hvis a[i] er partall
-                        int j = 0;
-                        if (midtenpartall) {
-                            j = a.length / 2;
-                        } else {
-                            j = a.length / 2 + 1;
-                        }
-                        for (; j < a.length; j++) { //finn neste oddetall så bytt
-                            //starter fra midten(hvis mid er partall) eller +1(hvis mid er oddetall) til høyre
-                            if (a[j] % 2 != 0) { //sjekk hvis oddetall
-                                int temp = a[j]; //lagre oddetallet
-                                a[j] = a[i]; //gjør oddetallet til partallet
-                                a[i] = temp; //gjør original posisjon til partallet til oddetall (venstre for mid)
-                                break;
-                            }
-                        }
+                    if (a[i] % 2 == 0) {
+                        antallpartall++;
                     }
 
-                    //partisjonering hvis oddetall
-                    if (a[i] % 2 != 0) { //Sjekk hvis a[i] er oddetall
-                        int j = 0;
-                        if (midtenpartall) {
-                            j = a.length / 2;
-                        } else {
-                            j = a.length / 2 - 1;
-                        }
-                        for (; j > -1; j--) { //finn neste partall så bytt
-                            //starter fra midten til venstre
-                            if (a[j] % 2 == 0) { //sjekk hvis partall
-                                int temp = a[j]; //lagre partallet
-                                a[j] = a[i]; //gjør partallet til oddetallet
-                                a[i] = temp; //gjør original posisjon til oddetallet til partallet (høyre for mid)
-                                break;
-                            }
-                        }
-                    }
-
-                    if (a[0] % 2 == 0) { //sjekk hvis første tall i array er et partall, isåfall bytt med midten
-                        int temp = 0;
-                        temp = a[0];
-                        a[0] = a[a.length / 2];
-                        a[a.length / 2] = temp;
-                    }
-
-                    // Hvorfor blir ikke første og midten byttet av algoritmen?
-                    // Pga. for loop rører ikke første indeks fra midten til venstre hvis a[0] er oddetall
-                    // eller a[a.length/2] hvis midten er partall.
-                }
-            }
-
-            // Sortering av partisjonene
-            // Sorterer partallene
-                for (int i = a.length/2 + 1; i < a.length; i++) { //venstre
-                    for (int j = i + 1; j < a.length; j++) { // høyre
-                        if (a[i] > a[j]) { // hvis venstre er større enn høyre - bytt.
-                            int temp = a[j];
-                            a[j] = a[i];
-                            a[i] = temp;
-                        }
+                    if (a[i] % 2 != 0) {
+                        antalloddetall++;
                     }
                 }
 
+                while (x < n) {
+                    if (a[x] % 2 == 0) {
+                        funneteven = true;
+                    }
+                    else {
+                        x++;
+                    }
 
-            // Sorterer oddetallene
-            if (a[a.length/2] % 2 == 0) {
-                for (int i = 0; i < a.length/2; i++) { //sorter oddetall til venstre
-                    for (int j = i + 1; j < a.length/2; j++) { // høyre
-                        if (a[i] > a[j]) { // hvis venstre er større enn høyre - bytt.
+                    if (a[n] % 2 != 0) {
+                        funnetodd = true;
+                    }
+                    else {
+                        n--;
+                    }
+
+                    if (funneteven && funnetodd) {
+                        int temp = a[n];
+                        a[n] = a[x];
+                        a[x] = temp;
+                        funneteven = false;
+                        funnetodd = false;
+                    }
+                }
+
+                /*
+                for (int i = 0; i < antalloddetall; i++) {
+                    for (int j = i + 1; j < antalloddetall; j++) {
+                        if (a[i] > a[j]) {
                             int temp = a[i];
                             a[i] = a[j];
                             a[j] = temp;
                         }
                     }
                 }
-            }
-            else {
-                for (int i = 0; i < a.length/2+1; i++) { //sorter oddetall til venstre
-                    for (int j = i + 1; j < a.length/2+1; j++) { // høyre
-                        if (a[i] > a[j]) { // hvis venstre er større enn høyre - bytt.
+
+                for (int i = antalloddetall; i < a.length; i++) { // Sorterer partall
+                    for (int j = i + 1; j < a.length; j++) {
+                        if (a[i] > a[j]) {
                             int temp = a[i];
                             a[i] = a[j];
                             a[j] = temp;
                         }
                     }
                 }
-            };
 
+                 */
+
+            }
         }
     }
 
