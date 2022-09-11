@@ -10,6 +10,41 @@ import java.util.NoSuchElementException;
 public class Oblig1 {
     private Oblig1() {}
 
+    // Metoder fra undervisningen //////////////////////////////////////
+    public static void bytt(int[] a, int i, int j)
+    {
+        int temp = a[i]; a[i] = a[j]; a[j] = temp;
+    }
+
+    private static int parter0(int[] a, int v, int h, int skilleverdi)
+    {
+        while (true)                                  // stopper når v > h
+        {
+            while (v <= h && a[v] < skilleverdi) v++;   // h er stoppverdi for v
+            while (v <= h && a[h] >= skilleverdi) h--;  // v er stoppverdi for h
+
+            if (v < h) bytt(a,v++,h--);                 // bytter om a[v] og a[h]
+            else  return v;  // a[v] er nåden første som ikke er mindre enn skilleverdi
+        }
+    }
+    static int sParter0(int[] a, int v, int h, int indeks)
+    {
+        bytt(a, indeks, h);           // skilleverdi a[indeks] flyttes bakerst
+        int pos = parter0(a, v, h - 1, a[h]);  // partisjonerer a[v:h - 1]
+        bytt(a, pos, h);              // bytter for å få skilleverdien på rett plass
+        return pos;                   // returnerer posisjonen til skilleverdien
+    }
+
+    public static void kvikksortering0(int[] a, int v, int h)  // en privat metode
+    {
+        if (v >= h) return;  // a[v:h] er tomt eller har maks ett element
+        int k = sParter0(a, v, h, (v + h)/2);  // bruker midtverdien
+        kvikksortering0(a, v, k - 1);     // sorterer intervallet a[v:k-1]
+        kvikksortering0(a, k + 1, h);     // sorterer intervallet a[k+1:h]
+    }
+    ///// Metoder fra undervisningen //////////////////////////////////////
+
+
     ///// Oppgave 1 //////////////////////////////////////
     public static int maks(int[] a) {
         if (a.length < 1) { //hvis tabell er tomt, error
@@ -137,6 +172,9 @@ public class Oblig1 {
 
             //Hvis bare partall eller oddetall, sorter på vanlig måte.
             if (barepartall || bareoddetall) {
+                kvikksortering0(a, 0, a.length - 1);
+
+                /* Gamle måten jeg gjorde dette på, ineffektiv med O(n*n)
                 for (int i = 0; i < a.length; i++) { //venstre
                     for (int j = i + 1; j < a.length; j++) { // høyre
                         if (a[i] > a[j]) { // hvis venstre er større enn høyre - bytt.
@@ -145,7 +183,7 @@ public class Oblig1 {
                             a[j] = temp;
                         }
                     }
-                }
+                } */
             }
 
             if (!bareoddetall && !barepartall) {
@@ -158,17 +196,17 @@ public class Oblig1 {
                 boolean funneteven = false;
                 boolean funnetodd = false;
 
-                for (int i = 0; i < a.length; i++) {
-                    if (a[i] % 2 == 0) {
-                        antallpartall++;
-                    }
 
+                for (int i = 0; i < a.length; i++) {
+                    //Teller hvor mange oddetall det er for senere bruk (pivot)
                     if (a[i] % 2 != 0) {
                         antalloddetall++;
                     }
                 }
 
-                while (x < n) {
+                while (x < n) { //Stopp loopen når venstre og høyre pointer krysser hverandre.
+                    // Start fra hver ende og stopp når en oddetall/partall blir funnet.
+                    // x starter fra venstre og finner partall. N starter fra høyre og finner oddetall.
                     if (a[x] % 2 == 0) {
                         funneteven = true;
                     }
@@ -183,7 +221,7 @@ public class Oblig1 {
                         n--;
                     }
 
-                    if (funneteven && funnetodd) {
+                    if (funneteven && funnetodd) { // Når begge har funnet en partall/oddetall, switch de.
                         int temp = a[n];
                         a[n] = a[x];
                         a[x] = temp;
@@ -192,29 +230,8 @@ public class Oblig1 {
                     }
                 }
 
-                /*
-                for (int i = 0; i < antalloddetall; i++) {
-                    for (int j = i + 1; j < antalloddetall; j++) {
-                        if (a[i] > a[j]) {
-                            int temp = a[i];
-                            a[i] = a[j];
-                            a[j] = temp;
-                        }
-                    }
-                }
-
-                for (int i = antalloddetall; i < a.length; i++) { // Sorterer partall
-                    for (int j = i + 1; j < a.length; j++) {
-                        if (a[i] > a[j]) {
-                            int temp = a[i];
-                            a[i] = a[j];
-                            a[j] = temp;
-                        }
-                    }
-                }
-
-                 */
-
+                kvikksortering0(a, 0, antalloddetall - 1); //Sorterer alle oddetallene.
+                kvikksortering0(a, antalloddetall, a.length-1); //Sorterer alle partallene.
             }
         }
     }
