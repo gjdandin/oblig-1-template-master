@@ -45,4 +45,10 @@ loop for å loope gjennom arrayet og telle unike integers (lineær-O notasjon).
 som skanner arrayet fra to motsatte retninger - start og slutt så halverer man skannetiden. 
 Pivot er beregnet gjennom å telle antall oddetall.
 Når partall/oddetall er delsortert, så brukte jeg kvikksorterings-metoden fra pensum til å sortere delarrayene. 
+   * Kvikksorteringsmetoden er fra Programkode 1.3.9 h) i kompendiet. 
+   * Den er avhengig av sParter0 (Programkode 1.3.9 f) og Parter (Programkode 1.3.9 a).
+   * I tillegg til bytt (Programkode 1.3.13 f)
 Jeg prøvde først å sortere dem på min egen måte, men fant ut fort at det var for ineffektiv O(n*n). 
+Beste løsningen var da å implementere kvikksort fra kompendiet.
+
+5. 

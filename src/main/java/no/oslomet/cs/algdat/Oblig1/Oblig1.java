@@ -238,7 +238,16 @@ public class Oblig1 {
 
     ///// Oppgave 5 //////////////////////////////////////
     public static void rotasjon(char[] a) {
-        throw new UnsupportedOperationException();
+        if (a.length < 2) {
+            return;
+        }
+        int n = a.length;
+        int d = 1;
+        int siste = a[a.length-1];
+        for (int i = a.length - 1; i > 0; i--) {
+            a[i] = a[i-1];
+        }
+        a[0] = (char) siste;
     }
 
     ///// Oppgave 6 //////////////////////////////////////
