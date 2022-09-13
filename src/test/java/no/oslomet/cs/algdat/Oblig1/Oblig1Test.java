@@ -596,6 +596,7 @@ public class Oblig1Test {
         if (s.compareTo("ALGORITMER OG DATASTRUKTURER") != 0) {
             System.out.println
                     ("Oppgave 7b: e) Svaret skal bli ALGORITMER OG DATASTRUKTURER!");
+            System.out.println(s);
             antallFeil++;
         }
 

@@ -8,8 +8,10 @@
 9Oppgave 10: e) Skal ikke kaste unntak for et tomt ord!!
 )java.lang.UnsupportedOperationException
 :Oppgave 6: a) Skal ikke kaste unntak for en tom tabell!!
-	)java.lang.UnsupportedOperationException
-	COppgave 7a: a) Skal ikke kaste unntak for to tomme tegnstrenger!!
+	(Oppgave 7b: d) Svaret skal bli lik ABC
+	>Oppgave 7b: e) Svaret skal bli ALGORITMER OG DATASTRUKTURER!
+	QALGORITMER OG DATASTRUKTUREnullnullnullnullnullnullnullnullnullnullnullnullnull
+	;Oppgave 7b: f) Svaret skal bli ABCDEFGHIJKLMNOPQRSTUVWXY!
 
 9Opgave 8: a) Skal ikke kastes unntak for en tom tabell!
 
