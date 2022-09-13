@@ -258,12 +258,45 @@ public class Oblig1 {
     ///// Oppgave 7 //////////////////////////////////////
     /// 7a)
     public static String flett(String s, String t) {
-        throw new UnsupportedOperationException();
+        if (s.length() == 0 && t.length() == 0) { // Hvis det er to tomme strenger, returner "";
+            return "";
+        }
+
+        if (s.length() == 0) {
+            return t;
+        }
+        else if (t.length() == 0) {
+            return s;
+        }
+
+        String [] r = new String[s.length() + t.length()]; // Dette skal returneres
+        String [] first = s.split(""); //gjør om string til string array
+        String [] second = t.split("");
+
+        int i = 0, j = 0, k = 0;
+        while (i < first.length && j < second.length) {
+            r[k++] = first[i++]; // verdi fra s
+            r[k++] = second[j++]; // verdi fra t
+        }
+
+        while (i < first.length) { //Hvis det er noe igjen, kopier til array.
+            r[k++] = first[i++];
+        }
+
+        while (j < second.length) { //Hvis det er noe igjen, kopier til array.
+            r[k++] = second[j++];
+        }
+
+        return String.join("", r); //Returner string arrayet som string.
     }
 
     /// 7b)
     public static String flett(String... s) {
-        throw new UnsupportedOperationException();
+        if (s.length == 0) { // Hvis det er tomt tabell, returner "";
+            return "";
+        };
+
+        String [] r = new String[s.length]; //Hjelpetabell for å lagre return setningen.
     }
 
     ///// Oppgave 8 //////////////////////////////////////

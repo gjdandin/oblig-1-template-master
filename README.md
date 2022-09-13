@@ -51,4 +51,7 @@ Når partall/oddetall er delsortert, så brukte jeg kvikksorterings-metoden fra 
 Jeg prøvde først å sortere dem på min egen måte, men fant ut fort at det var for ineffektiv O(n*n). 
 Beste løsningen var da å implementere kvikksort fra kompendiet.
 
-5. 
+5. Med tanke på at elementene skulle bare forskyves en til høyre, så var den letteste løsningen å rett og slett
+kopiere den siste elementet, lagre den i en variabel og flytte alle elementene en enhet til høyre gjennom en for-loop.
+Med siste element "til overs" så var det bare å erstatte a[0] med det som opprinnelig var siste elementet så har man
+en komplett forskyvning av alle elementene til høyre.
