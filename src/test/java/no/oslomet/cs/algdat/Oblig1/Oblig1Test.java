@@ -576,6 +576,7 @@ public class Oblig1Test {
             antallFeil++;
         }
 
+
         try {
             s = Oblig1.flett("", "ABC", "");  // kaller metoden
         } catch (Exception e) {
@@ -588,6 +589,7 @@ public class Oblig1Test {
         if (s.compareTo("ABC") != 0) {
             System.out.println
                     ("Oppgave 7b: d) Svaret skal bli lik ABC");
+            System.out.println(s);
             antallFeil++;
         }
 
@@ -605,6 +607,7 @@ public class Oblig1Test {
         if (s.compareTo("ABCDEFGHIJKLMNOPQRSTUVWXY") != 0) {
             System.out.println
                     ("Oppgave 7b: f) Svaret skal bli ABCDEFGHIJKLMNOPQRSTUVWXY!");
+            System.out.println(s);
             antallFeil++;
         }
 

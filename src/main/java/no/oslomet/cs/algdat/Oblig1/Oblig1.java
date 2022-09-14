@@ -296,24 +296,67 @@ public class Oblig1 {
             return "";
         };
 
-        String [] r = new String[40];//Hjelpetabell for å lagre return setningen.
-
         // Telle hvor mange bokstaver det er i lengste setning.
+        // Telle hvor mange bokstaver det skal være
         int lengste = 0;
+        int ordlengde = 0;
+        String lengsteord = "";
         for (String ord : s) {
             if (ord.length() > lengste) {
                 lengste = ord.length();
+                lengsteord = ord;
+            }
+            ordlengde += ord.length();
+        }
+
+        int indeksavlengsteord = 0;
+        for (int i = 0; i < s.length; i++) {
+            if(s[i].equals(lengsteord)){
+                indeksavlengsteord = i;
             }
         }
 
-        int i = 0, j = 0, k = 0, y=0; //i for ord, j for bokstav.
+        String [] r = new String[ordlengde];//Hjelpetabell for å lagre return setningen.
+
+        int i = 0, j = 0, k = 0; //i for ord, j for bokstav.
+
         while (i < s.length){ // Mens index ord er mindre enn setning lengde
-            if (j == lengste) { // Hvis vi når siste bokstav i den lengste ordet, avslutt
+            if (j > s[i].length() - 1 || s[i].equals("")) {
+                //hvis bokstav er lenger enn len ordet eller er en tom ord, gå til neste ord
+                i++;
+            }
+            else if (j > lengste - 1) { // Hvis vi når større bokstav enn den lengde av lengste ordet, avslutt
                 break;
             }
-            else if (j > s[i].length() - 1) {
+            else if (i > s.length - 1) {
+                // hvis større indeks enn siste ordet, gå til neste bokstav og start fra starten igjen
+                j++;
+                i = 0;
+            }
+            else if (j < s[i].length()){
+                //hvis dette ordet er lenger enn j, da er den gyldig for å lagre bokstav av
+                //lagre bokstav for dette ordet så gå til neste ord
+                r[k++] = String.valueOf(s[i].charAt(j));
+                i++;
+                if (i > s.length - 1) {
+                    // hvis større indeks enn siste ordet, gå til neste bokstav og start fra starten igjen
+                    j++;
+                    i = 0;
+                }
+                else if (s[i].equals("") && !(i > s.length - 1)) {
+                    i++;
+                }
+            }
+        }
+
+        /*
+        while (i < s.length){ // Mens index ord er mindre enn setning lengde
+            if (j > s[i].length() - 1 || s[i].isBlank()) {
                 //hvis bokstav er lenger enn len ordet gå til neste ord
                 i++;
+            }
+            else if (j > lengste - 1) { // Hvis vi når siste bokstav i den lengste ordet, avslutt
+                break;
             }
             else if (i > s.length - 1) {
                 // hvis større indeks enn siste ordet, gå til neste bokstav og start fra starten igjen
@@ -331,37 +374,7 @@ public class Oblig1 {
                     i = 0;
                 }
             }
-        }
-
-        /*
-        boolean bareetord = false;
-        int tommesetninger = 0;
-
-
-        if ((set.length-1) - tommesetninger == 1) {
-            bareetord = true;
-        }
-
-        if (bareetord) {
-            return String.join("", set);
-        }
-
-         */
-
-        //
-
-            /*
-        for (String o : s) { //går gjennom alle ord i setningen
-        while (i < s.length && j < o.length()) r[k++] = String.valueOf(o.charAt(j)) <= b[j] ? a[i++] : b[j++];
-            if (i < o.length() - 1) {
-                r.add(String.valueOf(o.charAt(i)));
-            }
-            else {
-                r.add(o);
-            }
-            i++;
         } */
-
 
         return String.join("", r);
     }

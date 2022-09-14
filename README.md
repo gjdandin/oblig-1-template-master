@@ -55,3 +55,5 @@ Beste løsningen var da å implementere kvikksort fra kompendiet.
 kopiere den siste elementet, lagre den i en variabel og flytte alle elementene en enhet til høyre gjennom en for-loop.
 Med siste element "til overs" så var det bare å erstatte a[0] med det som opprinnelig var siste elementet så har man
 en komplett forskyvning av alle elementene til høyre.
+
+* 7. Oppgave 7a - 
