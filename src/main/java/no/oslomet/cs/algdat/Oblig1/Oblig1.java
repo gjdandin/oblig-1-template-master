@@ -296,85 +296,53 @@ public class Oblig1 {
             return "";
         };
 
-        // Telle hvor mange bokstaver det er i lengste setning.
-        // Telle hvor mange bokstaver det skal være
-        int lengste = 0;
+        // Telle hvor mange bokstaver det skal være i return statement
         int ordlengde = 0;
-        String lengsteord = "";
-        for (String ord : s) {
-            if (ord.length() > lengste) {
-                lengste = ord.length();
-                lengsteord = ord;
-            }
-            ordlengde += ord.length();
-        }
 
-        int indeksavlengsteord = 0;
-        for (int i = 0; i < s.length; i++) {
-            if(s[i].equals(lengsteord)){
-                indeksavlengsteord = i;
-            }
+        for (String ord : s) {
+            ordlengde += ord.length();
         }
 
         String [] r = new String[ordlengde];//Hjelpetabell for å lagre return setningen.
 
-        int i = 0, j = 0, k = 0; //i for ord, j for bokstav.
+        int i = 0, j = 0, k = 0; int h = 0;
+        //i for ord, j for bokstav, k for index return tabell, h for antall fylt inn i tabell
 
-        while (i < s.length){ // Mens index ord er mindre enn setning lengde
-            if (j > s[i].length() - 1 || s[i].equals("")) {
-                //hvis bokstav er lenger enn len ordet eller er en tom ord, gå til neste ord
-                i++;
-            }
-            else if (j > lengste - 1) { // Hvis vi når større bokstav enn den lengde av lengste ordet, avslutt
-                break;
-            }
-            else if (i > s.length - 1) {
-                // hvis større indeks enn siste ordet, gå til neste bokstav og start fra starten igjen
-                j++;
-                i = 0;
-            }
-            else if (j < s[i].length()){
-                //hvis dette ordet er lenger enn j, da er den gyldig for å lagre bokstav av
-                //lagre bokstav for dette ordet så gå til neste ord
-                r[k++] = String.valueOf(s[i].charAt(j));
-                i++;
-                if (i > s.length - 1) {
-                    // hvis større indeks enn siste ordet, gå til neste bokstav og start fra starten igjen
+        while (h < ordlengde) {
+            if (s[i].equals("")) { // hvis "" er tomt, gå videre til neste ord
+                if (i >= s.length - 1) //hvis index for ord er større eller lik siste indeks, rescan med annen bokstav
+                {
                     j++;
                     i = 0;
                 }
-                else if (s[i].equals("") && !(i > s.length - 1)) {
+                else {
+                    i++; // Ellers gå til neste ord
+                }
+            }
+            else if (j < s[i].length()) {
+                // hvis ordet har bokstaver og bokstav index er gyldig - add til lista
+                r[k++] = String.valueOf(s[i].charAt(j)); //add til lista
+                h++; // Oppdater fylt inn.
+                if (i >= s.length - 1) //hvis index for ord er større eller lik siste indeks, rescan med annen bokstav
+                {
+                    j++;
+                    i = 0;
+                }
+                else {
+                    i++; // Ellers gå til neste ord
+                }
+            }
+            else if (j > s[i].length() - 1) { //Hvis ordet er kortere enn index, gå videre til neste ord
+                if ((i >= s.length - 1)) {
+                    //hvis index for ord er større eller lik siste indeks, rescan med annen bokstav
+                    j++;
+                    i=0;
+                }
+                else {
                     i++;
                 }
             }
         }
-
-        /*
-        while (i < s.length){ // Mens index ord er mindre enn setning lengde
-            if (j > s[i].length() - 1 || s[i].isBlank()) {
-                //hvis bokstav er lenger enn len ordet gå til neste ord
-                i++;
-            }
-            else if (j > lengste - 1) { // Hvis vi når siste bokstav i den lengste ordet, avslutt
-                break;
-            }
-            else if (i > s.length - 1) {
-                // hvis større indeks enn siste ordet, gå til neste bokstav og start fra starten igjen
-                j++;
-                i = 0;
-            }
-            else if (j < s[i].length()){
-                //hvis dette ordet er lenger enn j, da er den gyldig for å lagre bokstav av
-                //lagre bokstav for dette ordet så gå til neste ord
-                r[k++] = String.valueOf(s[i].charAt(j));
-                i++;
-                if (i > s.length - 1) {
-                    // hvis større indeks enn siste ordet, gå til neste bokstav og start fra starten igjen
-                    j++;
-                    i = 0;
-                }
-            }
-        } */
 
         return String.join("", r);
     }
