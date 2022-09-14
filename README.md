@@ -56,4 +56,13 @@ kopiere den siste elementet, lagre den i en variabel og flytte alle elementene e
 Med siste element "til overs" så var det bare å erstatte a[0] med det som opprinnelig var siste elementet så har man
 en komplett forskyvning av alle elementene til høyre.
 
-* 7. Oppgave 7a - 
+6. 7A - Jeg løste 7a ved å implementere min egen versjon av enkel fletting fra Programkode 1.3.11 a). Dette gjøres
+ved å ta annen hver bokstav fra lista og sette den inn i return array. Hvis det er noe igjen, som trolig skjer
+kun når en av lista blir tom, så bruker man en while loop til å få resten inn til arrayet. 
+Eneste forskjellen med min algoritme er at jeg konverterte input strengene til array og vis versa på return.
+
+7. 7B - Dette var vanskelig å gjennomføre og mange timer var brukt på feil løsning. 
+Prinsippet for å løse denne oppgaven er å ha pointers til både ord(i) og bokstav(j) og lage en while loop
+med (antall bokstaver satt inn < antall bokstaver det skal være) og skanne hvert ord for hvert bokstav i rekkefølge.
+I tilfeller der bokstav indeks ikke finnes i ordet eller at ordet er tomt, så går man videre til neste.
+Når man når siste ord i lista, så skanner man input lista på nytt helt til hver eneste bokstav har fått sin plass.
