@@ -173,17 +173,6 @@ public class Oblig1 {
             //Hvis bare partall eller oddetall, sorter på vanlig måte.
             if (barepartall || bareoddetall) {
                 kvikksortering0(a, 0, a.length - 1);
-
-                /* Gamle måten jeg gjorde dette på, ineffektiv med O(n*n)
-                for (int i = 0; i < a.length; i++) { //venstre
-                    for (int j = i + 1; j < a.length; j++) { // høyre
-                        if (a[i] > a[j]) { // hvis venstre er større enn høyre - bytt.
-                            int temp = a[i];
-                            a[i] = a[j];
-                            a[j] = temp;
-                        }
-                    }
-                } */
             }
 
             if (!bareoddetall && !barepartall) {
@@ -248,11 +237,6 @@ public class Oblig1 {
             a[i] = a[i-1];
         }
         a[0] = (char) siste;
-    }
-
-    ///// Oppgave 6 //////////////////////////////////////
-    public static void rotasjon(char[] a, int k) {
-        throw new UnsupportedOperationException();
     }
 
     ///// Oppgave 7 //////////////////////////////////////
@@ -345,25 +329,6 @@ public class Oblig1 {
         }
 
         return String.join("", r);
-    }
-
-    ///// Oppgave 8 //////////////////////////////////////
-    public static int[] indekssortering(int[] a) {
-        throw new UnsupportedOperationException();
-    }
-
-    ///// Oppgave 9 //////////////////////////////////////
-    public static int[] tredjeMin(int[] a) {
-        throw new UnsupportedOperationException();
-    }
-
-    ///// Oppgave 10 //////////////////////////////////////
-    public static int bokstavNr(char bokstav) {
-        throw new UnsupportedOperationException();
-    }
-
-    public static boolean inneholdt(String a, String b) {
-        throw new UnsupportedOperationException();
     }
 
 }  // Oblig1
